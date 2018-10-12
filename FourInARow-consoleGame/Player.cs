@@ -9,6 +9,11 @@ namespace FourInARow_consoleGame
 {
     class Player
     {
+
+        /// <summary>
+        /// skyd mig - lars
+        /// </summary>
+
         private string playerName;
         private char formOfPiece;
 
