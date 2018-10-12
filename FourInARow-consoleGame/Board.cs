@@ -45,16 +45,36 @@ namespace FourInARow_consoleGame
         public void AddPiece(char formOfPiece, int kolonne)
         {
             // TODO tjekke om kolonnen er fuld, hvis NEJ tilføj til rigtig kolonne
+
+            //bed om en int for kolonnefull
+            if(KolonneFull(int) == -1) { //skriv kolonnen er fuld };
+                //ellers tilføj en brik til kolonnen komma hvad der blev returnet
         }
 
-        private bool BoardFull()
+        public bool BoardFull()
         {
-            return BoardFull;
+            for (int i = 0; i < 5; i++)
+            {
+                if(KolonneFull(i) != -1)
+                {
+                    return false;
+                }
+
+                return true;
+            }
         }
 
-        public bool KolonneFull()
+        public int KolonneFull(int kolonne)
         {
-            return KolonneFull;
+            for (int i = 6; i > 0; i--)
+            {
+                if (boardArray[kolonne, i] == ',')
+                {
+                    return i;
+                }
+
+                else return -1;
+            }
         }
 
         public override string ToString()
@@ -62,11 +82,7 @@ namespace FourInARow_consoleGame
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < boardArray.Length; i++)
             {
-                for (int j = 0; j < boardArray.Length; j++)
-                {
-                    sb.Append(GetSingleValue(i, j));
-                }
-
+                for (int j = 0; j < boardArray.Length; j++) { sb.Append(GetSingleValue(i, j));}
                 sb.Append("/n");
             }
             return base.ToString();
