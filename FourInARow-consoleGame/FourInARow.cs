@@ -18,6 +18,10 @@ namespace FourInARow_consoleGame
             Player player1 = new Player("Lars", 'X');
             Player player2 = new Player("Martin", 'B');
         }
+
+        // TODO while loop, der kører hele spillet
+
+        // TODO next player
         
     }
 
