@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FourInARow_consoleGame
 {
-    
+
     public class FourInARow
     {
         public Board board;
@@ -17,10 +17,28 @@ namespace FourInARow_consoleGame
             board = new Board(this);
             Player player1 = new Player("Lars", 'X');
             Player player2 = new Player("Martin", 'B');
+
+
+            // TODO while loop, der kører hele spillet
+
+            while (!GameOver.CheckFourInARow(board.boardArray))
+            {
+                // spørg currentplaye
+                Console.ReadLine();
+
+                player1.PlayPiece();
+
+                // vis pladen
+
+                // nextplayer()
+            }
         }
 
-        // TODO while loop, der kører hele spillet
 
+        public void NextPlayer()
+        {
+
+        }
         // TODO next player
         
     }
