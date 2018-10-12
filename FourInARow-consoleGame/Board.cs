@@ -8,10 +8,10 @@ namespace FourInARow_consoleGame
 {
     public class Board
     {
+        char[,] twoDimensionalArray = new char[6, 6];
+
         public Board()
         {
-            char[,] twoDimensionalArray = new char[6, 6];
-
             /// <summary>
             /// get a singel value from our two dimensional array
             /// </summary>
