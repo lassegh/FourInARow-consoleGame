@@ -8,8 +8,23 @@ namespace FourInARow_consoleGame
 {
     class Player
     {
-        //New player???
+        private string playerName;
+        private char formOfPiece;
 
-        // ebbe styrer git
+        public Player(string name, char piece)
+        {
+            playerName = name;
+            formOfPiece = piece;
+        }
+
+        public string getPlayerName()
+        {
+            return playerName;
+        }
+
+        public char getFormOfPiece()
+        {
+            return formOfPiece;
+        }
     }
 }
