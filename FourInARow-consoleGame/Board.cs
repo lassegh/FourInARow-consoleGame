@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -44,16 +45,44 @@ namespace FourInARow_consoleGame
         public void AddPiece(char formOfPiece, int kolonne)
         {
             // TODO tjekke om kolonnen er fuld, hvis NEJ tilføj til rigtig kolonne
+
+            //bed om en int for kolonnefull
+            if (KolonneFull(kolonne) == -1)
+            {
+                Console.WriteLine("Kolonnen er fuld");
+            }
+            else
+            {
+          
+                SetSingleValue(kolonne, //hvad end plads den returnerer, formOfPiece);
+            }
         }
 
-        private bool BoardFull()
+        public bool BoardFull()
         {
-            return BoardFull;
+            //tjekker alle kolonner. hvis alle returnerer -1, så er alle kolonner fulde, derfor er brættet fuldt
+            for (int i = 0; i < 5; i++)
+            {
+                if(KolonneFull(i) != -1)
+                {
+                    return false;
+                }
+
+                return true;
+            }
         }
 
-        public bool KolonneFull()
+        public int KolonneFull(int kolonne)
         {
-            return KolonneFull;
+            for (int i = 6; i > 0; i--)
+            {
+                if (boardArray[kolonne, i] == FourInARow.emptySpace)
+                {
+                    return i; //return pladsen tilbage til at spille brikken
+                }
+
+                else return -1; //returner at kolonnen er fuld
+            }
         }
 
         public override string ToString()
@@ -61,11 +90,7 @@ namespace FourInARow_consoleGame
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < boardArray.Length; i++)
             {
-                for (int j = 0; j < boardArray.Length; j++)
-                {
-                    sb.Append(GetSingleValue(i, j));
-                }
-
+                for (int j = 0; j < boardArray.Length; j++) { sb.Append(GetSingleValue(i, j));}
                 sb.Append("/n");
             }
             return base.ToString();
