@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace FourInARow_consoleGame
 {
     
-    class FourInARow
+    public class FourInARow
     {
         public Board board;
         public char emptySpace = 'O';
