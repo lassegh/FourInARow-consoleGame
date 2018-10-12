@@ -12,29 +12,30 @@ namespace FourInARow_consoleGame
 
         public Board()
         {
-            /// <summary>
-            /// get a singel value from our two dimensional array
-            /// </summary>
-            /// <param name="x">x axis</param>
-            /// <param name="y">y axis</param>
-            /// <returns></returns>
-            public char getSingleValue(int x, int y)
-            {
-                return twoDimensionalArray[x, y];
-            }
 
-            /// <summary>
-            /// Set a single value our two dimensional array
-            /// </summary>
-            /// <param name="x">x axis position</param>
-            /// <param name="y">y axis position</param>
-            /// <param name="value">the char you want to set</param>
-            /// <returns></returns>
-            public char setSingleValue(int x, int y, char value)
-            {
-                twoDimensionalArray[x, y] = value;
-            }
+        }
 
+        /// <summary>
+        /// get a singel value from our two dimensional array
+        /// </summary>
+        /// <param name="x">x axis</param>
+        /// <param name="y">y axis</param>
+        /// <returns></returns>
+        public char GetSingleValue(int x, int y)
+        {
+            return twoDimensionalArray[x, y];
+        }
+
+        /// <summary>
+        /// Set a single value our two dimensional array
+        /// </summary>
+        /// <param name="x">x axis position</param>
+        /// <param name="y">y axis position</param>
+        /// <param name="value">the char you want to set</param>
+        /// <returns></returns>
+        public char SetSingleValue(int x, int y, char value)
+        {
+            twoDimensionalArray[x, y] = value;
         }
 
         public void AddPiece(char formOfPiece, int kolonne)
@@ -51,6 +52,12 @@ namespace FourInARow_consoleGame
         {
             return KolonneFull;
         }
-    }
+
+        public override string ToString()
+        {
+            // TODO DrawBoard
+            return base.ToString();
+        }
+    
     }
 }
