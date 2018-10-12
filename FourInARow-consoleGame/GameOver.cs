@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace FourInARow_consoleGame
 {
-    class GameOver
+    public class GameOver
     {
         /// <summary>
         /// Tjekker om der er 4 på stribe
         /// </summary>
         /// <returns>bool</returns>
-        static public Boolean CheckFourInARow()
+        public static Boolean CheckFourInARow(Char[,] boardArray)
         {
             for (int i = 0; i < 6; i++)
             {
                 
             }
-            Board.twoDimensionalArray
+            
             Boolean gameover = false;
              
             return gameover;
