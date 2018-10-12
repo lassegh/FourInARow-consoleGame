@@ -37,19 +37,19 @@ namespace FourInARow_consoleGame
 
         }
 
-        public void AddPiece(var formOfPiece, int kolonne)
+        public void AddPiece(char formOfPiece, int kolonne)
         {
-
+            // TODO tjekke om kolonnen er fuld, hvis NEJ tilføj til rigtig kolonne
         }
 
         private bool BoardFull()
         {
-
+            return BoardFull;
         }
 
         public bool KolonneFull()
         {
-
+            return KolonneFull;
         }
     }
     }
