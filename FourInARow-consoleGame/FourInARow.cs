@@ -6,11 +6,18 @@ using System.Threading.Tasks;
 
 namespace FourInARow_consoleGame
 {
+    
     class FourInARow
     {
-        Board board = new Board();
-        Player player1 = new Player("Lars", 'X');
-        Player player2 = new Player("Martin", 'O');
+        public Board board;
+
+        public FourInARow()
+        {
+            board = new Board(this);
+            Player player1 = new Player("Lars", 'X');
+            Player player2 = new Player("Martin", 'O');
+        }
+        
     }
 
     

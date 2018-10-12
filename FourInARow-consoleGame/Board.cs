@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 
 namespace FourInARow_consoleGame
 {
+    
     public class Board
     {
+        private FourInARow game;
         public char[,] boardArray = new char[6, 6];
 
-        public Board()
+        public Board(FourInARow game)
         {
+            this.game = game;
 
         }
 
