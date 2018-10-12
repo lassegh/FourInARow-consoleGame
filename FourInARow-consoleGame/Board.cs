@@ -55,7 +55,7 @@ namespace FourInARow_consoleGame
             else
             {
           
-                SetSingleValue(kolonne, //hvad end plads den returnerer, formOfPiece);
+                SetSingleValue(kolonne, returnvalue , game.player.);
             }
         }
 
@@ -71,19 +71,23 @@ namespace FourInARow_consoleGame
 
                 return true;
             }
+
+            return false;
         }
 
         public int KolonneFull(int kolonne)
         {
             for (int i = 6; i > 0; i--)
             {
-                if (boardArray[kolonne, i] == FourInARow.emptySpace)
+                if (boardArray[kolonne, i] == game.emptySpace)
                 {
                     return i; //return pladsen tilbage til at spille brikken
                 }
 
                 else return -1; //returner at kolonnen er fuld
             }
+
+            return -1;
         }
 
         public override string ToString()
