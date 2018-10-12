@@ -8,7 +8,7 @@ namespace FourInARow_consoleGame
 {
     public class Board
     {
-        char[,] twoDimensionalArray = new char[6, 6];
+        public char[,] twoDimensionalArray = new char[6, 6];
 
         public Board()
         {
