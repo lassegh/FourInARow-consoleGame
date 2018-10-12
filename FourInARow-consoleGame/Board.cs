@@ -17,6 +17,15 @@ namespace FourInARow_consoleGame
         public Board(FourInARow game)
         {
             this.game = game;
+
+            for (int i = 0; i < boardArray.Length; i++)
+            {
+                for (int j = 0; j < boardArray.Length; j++)
+                {
+                    SetSingleValue(i, j, game.emptySpace);
+                }
+                
+            }
         }
         
         /// <summary>
@@ -89,7 +98,7 @@ namespace FourInARow_consoleGame
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < boardArray.Length; i++)
             {
-                for (int j = 0; j < boardArray.Length; j++) { sb.Append(GetSingleValue(i, j));}
+                for (int j = 0; j < boardArray.Length; j++) { sb.Append(game.emptySpace);}
                 sb.Append("/n");
             }
             return base.ToString();
