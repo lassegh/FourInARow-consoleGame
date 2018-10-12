@@ -51,27 +51,22 @@ namespace FourInARow_consoleGame
             {
                 Console.WriteLine("Kolonnen er fuld");
             }
-            else
-            {
-          
-                SetSingleValue(kolonne, returnvalue , game.player.);
-            }
+            
+            SetSingleValue(kolonne, KolonneFull(kolonne), formOfPiece);
         }
 
         public bool BoardFull()
         {
             //tjekker alle kolonner. hvis alle returnerer -1, så er alle kolonner fulde, derfor er brættet fuldt
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 5 ; i++)
             {
                 if(KolonneFull(i) != -1)
                 {
                     return false;
                 }
-
-                return true;
             }
 
-            return false;
+            return true;
         }
 
         public int KolonneFull(int kolonne)
