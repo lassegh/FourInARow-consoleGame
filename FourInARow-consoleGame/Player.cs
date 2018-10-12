@@ -26,5 +26,10 @@ namespace FourInARow_consoleGame
         {
             return formOfPiece;
         }
+
+        public void PlayPiece()
+        {
+            // TODO Lav en Play Piece metode
+        }
     }
 }

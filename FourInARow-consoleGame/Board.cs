@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,7 +37,7 @@ namespace FourInARow_consoleGame
         /// <param name="y">y axis position</param>
         /// <param name="value">the char you want to set</param>
         /// <returns></returns>
-        public char SetSingleValue(int x, int y, char value)
+        public void SetSingleValue(int x, int y, char value)
         {
             boardArray[x, y] = value;
         }
@@ -59,12 +60,14 @@ namespace FourInARow_consoleGame
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < Board.width; i++)
+            for (int i = 0; i < boardArray.Length; i++)
             {
-                for (int j = 0; j < Board.length; j++)
+                for (int j = 0; j < boardArray.Length; j++)
                 {
-                    
+                    sb.Append(GetSingleValue(i, j));
                 }
+
+                sb.Append("/n");
             }
             return base.ToString();
         }
