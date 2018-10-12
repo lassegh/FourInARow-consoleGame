@@ -10,15 +10,14 @@ namespace FourInARow_consoleGame
     
     public class Board
     {
-        private FourInARow game;
+        FourInARow game;
         public char[,] boardArray = new char[6, 6];
 
         public Board(FourInARow game)
         {
             this.game = game;
-
         }
-
+        
         /// <summary>
         /// get a singel value from our two dimensional array
         /// </summary>
