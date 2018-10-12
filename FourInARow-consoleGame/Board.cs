@@ -34,7 +34,7 @@ namespace FourInARow_consoleGame
         /// <param name="y">y axis position</param>
         /// <param name="value">the char you want to set</param>
         /// <returns></returns>
-        public char SetSingleValue(int x, int y, char value)
+        public void SetSingleValue(int x, int y, char value)
         {
             boardArray[x, y] = value;
         }
