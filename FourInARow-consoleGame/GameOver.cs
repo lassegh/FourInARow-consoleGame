@@ -14,6 +14,11 @@ namespace FourInARow_consoleGame
         /// <returns>bool</returns>
         static public Boolean CheckFourInARow()
         {
+            for (int i = 0; i < 6; i++)
+            {
+                
+            }
+            Board.twoDimensionalArray
             Boolean gameover = false;
              
             return gameover;
