@@ -55,7 +55,14 @@ namespace FourInARow_consoleGame
 
         public override string ToString()
         {
-            // TODO DrawBoard
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < Board.width; i++)
+            {
+                for (int j = 0; j < Board.length; j++)
+                {
+                    
+                }
+            }
             return base.ToString();
         }
     
