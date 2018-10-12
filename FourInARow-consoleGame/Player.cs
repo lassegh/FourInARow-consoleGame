@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FourInARow_consoleGame
 {
-    class Player
+    public class Player
     {
         private string playerName;
         private char formOfPiece;
