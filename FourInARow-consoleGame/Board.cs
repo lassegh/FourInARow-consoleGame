@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -47,12 +48,20 @@ namespace FourInARow_consoleGame
             // TODO tjekke om kolonnen er fuld, hvis NEJ tilføj til rigtig kolonne
 
             //bed om en int for kolonnefull
-            if(KolonneFull(int) == -1) { //skriv kolonnen er fuld };
-                //ellers tilføj en brik til kolonnen komma hvad der blev returnet
+            if (KolonneFull(kolonne) == -1)
+            {
+                Console.WriteLine("Kolonnen er fuld");
+            }
+            else
+            {
+          
+                SetSingleValue(kolonne, //hvad end plads den returnerer, formOfPiece);
+            }
         }
 
         public bool BoardFull()
         {
+            //tjekker alle kolonner. hvis alle returnerer -1, så er alle kolonner fulde, derfor er brættet fuldt
             for (int i = 0; i < 5; i++)
             {
                 if(KolonneFull(i) != -1)
@@ -68,12 +77,12 @@ namespace FourInARow_consoleGame
         {
             for (int i = 6; i > 0; i--)
             {
-                if (boardArray[kolonne, i] == ',')
+                if (boardArray[kolonne, i] == FourInARow.emptySpace)
                 {
-                    return i;
+                    return i; //return pladsen tilbage til at spille brikken
                 }
 
-                else return -1;
+                else return -1; //returner at kolonnen er fuld
             }
         }
 

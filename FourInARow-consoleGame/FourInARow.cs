@@ -10,12 +10,13 @@ namespace FourInARow_consoleGame
     class FourInARow
     {
         public Board board;
+        public char emptySpace = 'O';
 
         public FourInARow()
         {
             board = new Board(this);
             Player player1 = new Player("Lars", 'X');
-            Player player2 = new Player("Martin", 'O');
+            Player player2 = new Player("Martin", 'B');
         }
         
     }
