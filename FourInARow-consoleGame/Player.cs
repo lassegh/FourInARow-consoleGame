@@ -9,5 +9,7 @@ namespace FourInARow_consoleGame
     class Player
     {
         //New player???
+
+        // ebbe styrer git
     }
 }
