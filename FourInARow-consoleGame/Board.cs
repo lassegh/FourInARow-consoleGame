@@ -17,6 +17,15 @@ namespace FourInARow_consoleGame
         public Board(FourInARow game)
         {
             this.game = game;
+
+            for (int i = 0; i < boardArray.Length; i++)
+            {
+                for (int j = 0; j < boardArray.Length; j++)
+                {
+                    SetSingleValue(i, j, game.emptySpace);
+                }
+                
+            }
         }
         
         /// <summary>
@@ -51,27 +60,22 @@ namespace FourInARow_consoleGame
             {
                 Console.WriteLine("Kolonnen er fuld");
             }
-            else
-            {
-          
-                SetSingleValue(kolonne, returnvalue , game.player.);
-            }
+            
+            SetSingleValue(kolonne, KolonneFull(kolonne), formOfPiece);
         }
 
         public bool BoardFull()
         {
             //tjekker alle kolonner. hvis alle returnerer -1, så er alle kolonner fulde, derfor er brættet fuldt
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 5 ; i++)
             {
                 if(KolonneFull(i) != -1)
                 {
                     return false;
                 }
-
-                return true;
             }
 
-            return false;
+            return true;
         }
 
         public int KolonneFull(int kolonne)
@@ -94,7 +98,7 @@ namespace FourInARow_consoleGame
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < boardArray.Length; i++)
             {
-                for (int j = 0; j < boardArray.Length; j++) { sb.Append(GetSingleValue(i, j));}
+                for (int j = 0; j < boardArray.Length; j++) { sb.Append(game.emptySpace);}
                 sb.Append("/n");
             }
             return base.ToString();
