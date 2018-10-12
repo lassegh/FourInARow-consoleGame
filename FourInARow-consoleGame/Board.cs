@@ -8,7 +8,7 @@ namespace FourInARow_consoleGame
 {
     public class Board
     {
-        public char[,] twoDimensionalArray = new char[6, 6];
+        public char[,] boardArray = new char[6, 6];
 
         public Board()
         {
@@ -23,7 +23,7 @@ namespace FourInARow_consoleGame
         /// <returns></returns>
         public char GetSingleValue(int x, int y)
         {
-            return twoDimensionalArray[x, y];
+            return boardArray[x, y];
         }
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace FourInARow_consoleGame
         /// <returns></returns>
         public char SetSingleValue(int x, int y, char value)
         {
-            twoDimensionalArray[x, y] = value;
+            boardArray[x, y] = value;
         }
 
         public void AddPiece(char formOfPiece, int kolonne)
