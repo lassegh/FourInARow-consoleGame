@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 17cbd5036571cd036a7be6f67e0c2126a0589819
 namespace FourInARow_consoleGame
 {
     public class Board
