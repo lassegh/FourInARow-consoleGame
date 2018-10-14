@@ -10,7 +10,7 @@ namespace FourInARow_consoleGame
     public class FourInARow
     {
         public Board board;
-        public char emptySpace = 'O';
+        public static char emptySpace = 'O';
 
         public FourInARow()
         {
