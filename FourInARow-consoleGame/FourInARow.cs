@@ -13,6 +13,7 @@ namespace FourInARow_consoleGame
         public char emptySpace = 'O';
         private Player currentPlayer;
 
+        public static char emptySpace = 'O';
 
         public FourInARow()
         {
