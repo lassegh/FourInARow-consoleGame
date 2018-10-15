@@ -12,14 +12,14 @@ namespace FourInARow_consoleGame
         /// Tjekker om der er 4 på stribe
         /// </summary>
         /// <returns>bool</returns>
-        public static Boolean CheckFourInARow(Char[,] boardArray)
+        public static bool CheckFourInARow(Char[,] boardArray)
         {
             for (int i = 0; i < 6; i++)
             {
                 
             }
             
-            Boolean gameover = false;
+            bool gameover = false;
              
             return gameover;
         }
