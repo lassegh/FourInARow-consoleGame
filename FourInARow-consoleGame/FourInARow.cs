@@ -11,13 +11,15 @@ namespace FourInARow_consoleGame
     {
         public Board board;
         public char emptySpace = 'O';
+        private Player currentPlayer;
+
 
         public FourInARow()
         {
             board = new Board(this);
             Player player1 = new Player("Lars", 'X');
             Player player2 = new Player("Martin", 'B');
-
+            currentPlayer = Player.First();
 
             // TODO while loop, der kører hele spillet
 
@@ -37,7 +39,15 @@ namespace FourInARow_consoleGame
 
         public void NextPlayer()
         {
-
+            if (currentPlayer == Player.Last())
+            {
+                currentPlayer = Player.First();
+            }
+            else
+            {
+                int currentPlayerPosition = Player.IndexOf(currentPlayer);
+                currentPlayer = Player[currentPlayerPosition + 1];
+            }
         }
         // TODO next player
         
