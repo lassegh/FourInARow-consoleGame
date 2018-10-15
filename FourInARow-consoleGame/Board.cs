@@ -22,7 +22,7 @@ namespace FourInARow_consoleGame
             {
                 for (int j = 0; j < boardArray.Length; j++)
                 {
-                    SetSingleValue(i, j, game.emptySpace);
+                    SetSingleValue(i, j, FourInARow.emptySpace);
                 }
                 
             }
@@ -80,17 +80,20 @@ namespace FourInARow_consoleGame
 
         public int KolonneFull(int kolonne)
         {
-            for (int i = 6; i > 0; i--)
+            for (int i = 6; i > 0;)
             {
-                if (boardArray[kolonne, i] == game.emptySpace)
+                if (boardArray[kolonne, i] == FourInARow.emptySpace)
                 {
                     return i; //return pladsen tilbage til at spille brikken
                 }
 
-                else return -1; //returner at kolonnen er fuld
+                else i--;
+
+
             }
 
             return -1;
+
         }
 
         public override string ToString()
@@ -98,7 +101,7 @@ namespace FourInARow_consoleGame
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < boardArray.Length; i++)
             {
-                for (int j = 0; j < boardArray.Length; j++) { sb.Append(game.emptySpace);}
+                for (int j = 0; j < boardArray.Length; j++) { sb.Append(FourInARow.emptySpace);}
                 sb.Append("/n");
             }
             return base.ToString();
