@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,7 +12,6 @@ namespace FourInARow_consoleGame
     {
         List<Player> players = new List<Player>();
         public Board board;
-        //public char emptySpace = 'O'; Hvorfor er den blevet dubleret?
         public Player currentPlayer;
        
 
@@ -29,13 +29,20 @@ namespace FourInARow_consoleGame
 
             while (!GameOver.CheckFourInARow(board.boardArray)) // Hvorfor køres loopet i constructoren?
             {
-                // spørg currentplaye
-                if (!board.KolonneFull(kolonne)) // Her er der vist ingen attribut?
+                
+                if (!board.BoardFull()) // nu tjekker vi i stedet om boardet er fuldt -lars
                 {
-                    Console.WriteLine(currentPlayer + "Hvilken brik + kolonne vil du spille? Du kan vælge mellem 1-6"); // Player har ingen tostring, så her vil det være en idé at kalde currentPlayer.GetPlayerName()
+
+                    // spørg currentplayer
+                    Console.WriteLine(currentPlayer.getPlayerName() + "Hvilken brik + kolonne vil du spille? Du kan vælge mellem 1-6"); // Player har ingen tostring, så her vil det være en idé at kalde currentPlayer.GetPlayerName() //rettet -lars
 
                     // var playerPick = Console.ReadLine(board.AddPiece(char formOfPiece, int kolonne));
-                    board.AddPiece(char formOfPiece, int kolonne); // Er første attribut ikke currentPlayer.GetFormOfPiece() ? Mens anden attribut er Console.Readline() ?
+                    board.AddPiece(currentPlayer.getFormOfPiece(), Int32.Parse(Console.ReadLine())-1); // Er første attribut ikke currentPlayer.GetFormOfPiece() ? Mens anden attribut er Console.Readline() ? //rettet - lars
+                }
+                else //altså, hvis brættet er fuldt
+                {
+                    Console.WriteLine("Jamen så er spillet slut. Det blev en uafgjort!");
+                    break; //afslutter loopet - lars
                 }
 
                 // print pladen
