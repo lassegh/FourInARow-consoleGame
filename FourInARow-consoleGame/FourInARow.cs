@@ -32,6 +32,8 @@ namespace FourInARow_consoleGame
                 if (!board.KolonneFull(kolonne))
                 {
                     Console.WriteLine(currentPlayer + "Hvilken brik + kolonne vil du spille? Du kan vælge mellem 1-6");
+
+                    // var playerPick = Console.ReadLine(board.AddPiece(char formOfPiece, int kolonne));
                     board.AddPiece(char formOfPiece, int kolonne);
                 }
 
