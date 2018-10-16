@@ -9,48 +9,53 @@ namespace FourInARow_consoleGame
 
     public class FourInARow
     {
+        List<Player> players = new List<Player>();
         public Board board;
         public char emptySpace = 'O';
-        private Player currentPlayer;
+        public Player currentPlayer;
+       
 
         public static char emptySpace = 'O';
 
         public FourInARow()
         {
             board = new Board(this);
-            Player player1 = new Player("Lars", 'X');
-            Player player2 = new Player("Martin", 'B');
-            currentPlayer = Player.First();
 
-            // TODO while loop, der kører hele spillet
+            currentPlayer = players.First();
+            players.Add(new Player("Lars", 'X'));
+            players.Add(new Player("Martin", 'B'));
+
 
             while (!GameOver.CheckFourInARow(board.boardArray))
             {
                 // spørg currentplaye
-                Console.ReadLine();
+                if (!board.KolonneFull(kolonne))
+                {
+                    Console.WriteLine(currentPlayer + "Hvilken brik + kolonne vil du spille? Du kan vælge mellem 1-6");
+                    board.AddPiece(char formOfPiece, int kolonne);
+                }
 
-                player1.PlayPiece();
-
-                // vis pladen
+                // print pladen
+                Console.WriteLine(board.boardArray);
 
                 // nextplayer()
+                NextPlayer();
+                Console.WriteLine("Nu er det " + currentPlayer + "'s tur");
             }
         }
-
 
         public void NextPlayer()
         {
-            if (currentPlayer == Player.Last())
+            if (currentPlayer == players.Last())
             {
-                currentPlayer = Player.First();
+                currentPlayer = players.First();
             }
             else
             {
-                int currentPlayerPosition = Player.IndexOf(currentPlayer);
-                currentPlayer = Player[currentPlayerPosition + 1];
+                int currentPlayerPosition = players.IndexOf(currentPlayer);
+                currentPlayer = players[currentPlayerPosition + 1];
             }
         }
-        // TODO next player
         
     }
 
