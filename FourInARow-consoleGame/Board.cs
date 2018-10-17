@@ -70,7 +70,7 @@ namespace FourInARow_consoleGame
             
         }
 
-        public bool BoardFull(int kolonne)
+        public bool BoardFull()
         {
             //tjekker alle kolonner. hvis alle returnerer -1, så er alle kolonner fulde, derfor er brættet fuldt
             for (int i = 0; i < boardArray.Length; i++)
