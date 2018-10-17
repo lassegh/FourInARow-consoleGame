@@ -51,21 +51,19 @@ namespace FourInARow_consoleGame
             boardArray[x, y] = value;
         }
 
-        public void AddPiece(char formOfPiece, int kolonne)
+        public bool AddPiece(char formOfPiece, int kolonne)
         {
-            // TODO tjekke om kolonnen er fuld, hvis NEJ tilføj til rigtig kolonne //måske er det gjort, eh? - lars
-
-            //bed om en int for kolonnefull
-            if (KolonneFull(kolonne) == -1)
+            if (KolonneFull(kolonne))
             {
-                Console.WriteLine("Kolonnen er fuld");
+                return true;
             }
             else
             {
-                SetSingleValue(kolonne, KolonneFull(kolonne), formOfPiece);
+                SetSingleValue(kolonne, KolonnePlacement(kolonne), formOfPiece);
+                return false;
             }
 
-            
+  
         }
 
         public bool BoardFull()
@@ -73,7 +71,7 @@ namespace FourInARow_consoleGame
             //tjekker alle kolonner. hvis alle returnerer -1, så er alle kolonner fulde, derfor er brættet fuldt
             for (int i = 0; i < 5 ; i++)
             {
-                if(KolonneFull(i) != -1)
+                if(KolonneFull(i))
                 {
                     return false;
                 }
@@ -82,23 +80,41 @@ namespace FourInARow_consoleGame
             return true;
         }
 
-        public int KolonneFull(int kolonne)
+
+        public bool KolonneFull(int kolonne)
         {
-            for (int i = 6; i > 0;)
+            if (boardArray[kolonne, 0] == FourInARow.emptySpace)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
+        }
+
+
+        public int KolonnePlacement(int kolonne)
+        {
+            for (int i = 5; i > 0;)
             {
                 if (boardArray[kolonne, i] == FourInARow.emptySpace)
                 {
-                    return i; //return pladsen tilbage til at spille brikken
+                    return i;
                 }
-
-                else i--;
-
-
+                else
+                {
+                    i--;
+                }
             }
 
-            return -1;
+            return -1; //-1, nu en standard error code
 
         }
+
+
+
 
         public override string ToString()
         {
