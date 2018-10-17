@@ -53,19 +53,15 @@ namespace FourInARow_consoleGame
 
         public void AddPiece(char formOfPiece, int kolonne)
         {
-            // TODO tjekke om kolonnen er fuld, hvis NEJ tilføj til rigtig kolonne //måske er det gjort, eh? - lars
+            // TODO tjekke om kolonnen er fuld, hvis NEJ tilføj til rigtig kolonne
 
             //bed om en int for kolonnefull
             if (KolonneFull(kolonne) == -1)
             {
                 Console.WriteLine("Kolonnen er fuld");
             }
-            else
-            {
-                SetSingleValue(kolonne, KolonneFull(kolonne), formOfPiece);
-            }
-
             
+            SetSingleValue(kolonne, KolonneFull(kolonne), formOfPiece);
         }
 
         public bool BoardFull()
