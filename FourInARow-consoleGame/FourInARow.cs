@@ -26,16 +26,18 @@ namespace FourInARow_consoleGame
             players.Add(new Player("Martin", 'B'));
             currentPlayer = players.First();
 
-
+            //gameloop
             while (!GameOver.CheckFourInARow(board.boardArray))
             {
-                
-                if (!board.BoardFull()) // nu tjekker vi i stedet om boardet er fuldt -lars
-                {
-                    // spørg currentplayer hvilken brik de vil spille
-                    Console.WriteLine(currentPlayer.getPlayerName() + "Hvilken brik + kolonne vil du spille? Du kan vælge mellem 1-6");
 
-                    board.AddPiece(currentPlayer.getFormOfPiece(), Convert.ToInt32(Console.ReadLine())-1); //Add'er brik til kolonne
+                if (!board.BoardFull()) //nu tjekker vi om boardet er fuldt
+                {
+                    //spørg currentplayer hvilken brik de vil spille
+                    Console.WriteLine(currentPlayer.getPlayerName() +
+                                      "Hvilken brik + kolonne vil du spille? Du kan vælge mellem 1-6");
+
+                    board.AddPiece(currentPlayer.getFormOfPiece(),
+                        Convert.ToInt32(Console.ReadLine()) - 1); //Add'er brik til kolonne
                 }
                 else //hvis brættet er fuldt
                 {
@@ -43,15 +45,12 @@ namespace FourInARow_consoleGame
                     break; //afslutter loopet
                 }
 
-                // print pladen
+                //print pladen
                 Console.WriteLine(board.boardArray);
 
-                // Inden nextplayer kaldes tænker jeg GameOver klassen skal kaldes evt gennem et if statement
-
-
-                // nextplayer()
+                //næste spillers tur
                 NextPlayer();
-                Console.WriteLine("Nu er det " + currentPlayer + "'s tur");
+                Console.WriteLine("Nu er det " + currentPlayer.getPlayerName() + "'s tur");
             }
         }
 
