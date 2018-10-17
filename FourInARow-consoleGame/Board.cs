@@ -51,50 +51,75 @@ namespace FourInARow_consoleGame
             boardArray[x, y] = value;
         }
 
-        public void AddPiece(char formOfPiece, int kolonne)
+        public bool AddPiece(char formOfPiece, int kolonne)
         {
             // TODO tjekke om kolonnen er fuld, hvis NEJ tilføj til rigtig kolonne
 
             //bed om en int for kolonnefull
-            if (KolonneFull(kolonne) == -1)
+            if (KolonneFull(kolonne))
             {
                 Console.WriteLine("Kolonnen er fuld");
+                return false; //AddPiece fejlede
+            }
+            else
+            {
+                SetSingleValue(kolonne, KolonnePlacement(kolonne), formOfPiece);
+                Console.WriteLine("Brikken placeret");
+                return true; //AddPiece lykkedes
             }
             
-            SetSingleValue(kolonne, KolonneFull(kolonne), formOfPiece);
         }
 
-        public bool BoardFull()
+        public bool BoardFull(int kolonne)
         {
             //tjekker alle kolonner. hvis alle returnerer -1, så er alle kolonner fulde, derfor er brættet fuldt
-            for (int i = 0; i < 5 ; i++)
+            for (int i = 0; i < boardArray.Length; i++)
             {
-                if(KolonneFull(i) != -1)
+                if (!KolonneFull(i))
                 {
-                    return false;
+                    return false; //hvis bare en af kolonnerne ikke er fyldte, så er brættet ikke fyldt
                 }
             }
 
-            return true;
+            return true; 
+
+
         }
 
-        public int KolonneFull(int kolonne)
+        public bool KolonneFull(int kolonne)
         {
-            for (int i = 6; i > 0;)
+            if (boardArray[kolonne, 0] == FourInARow.emptySpace)
+            {
+                return false; //hvis der er et tomt felt i øverste række, så er den ikke fuld
+            }
+            else
+            {
+                return true;
+            }
+            
+
+        }
+
+
+        public int KolonnePlacement(int kolonne)
+        {
+            for (int i = 5; i > 0;)
             {
                 if (boardArray[kolonne, i] == FourInARow.emptySpace)
                 {
                     return i; //return pladsen tilbage til at spille brikken
+
                 }
-
-                else i--;
-
-
+                else
+                {
+                    i--;
+                }
             }
 
-            return -1;
-
+            return -1; //Den burde ALDRIG returnere -1, men Visual Studio forlanger at der er en return her
         }
+
+
 
         public override string ToString()
         {
