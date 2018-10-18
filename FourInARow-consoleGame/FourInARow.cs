@@ -46,12 +46,13 @@ namespace FourInARow_consoleGame
                 }
 
                 //print pladen
-                Console.WriteLine(board.boardArray);
+                Console.WriteLine(board.boardArray); // Vi vil kun have 'board' i parenteserne, da det er et object og der er toString metode i Lars' board :-)
 
                 //næste spillers tur
                 NextPlayer();
                 Console.WriteLine("Nu er det " + currentPlayer.getPlayerName() + "'s tur");
             }
+            // Else skriv hvem der vandt
         }
 
         public void NextPlayer()

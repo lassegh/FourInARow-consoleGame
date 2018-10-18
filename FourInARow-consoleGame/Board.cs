@@ -18,9 +18,9 @@ namespace FourInARow_consoleGame
         {
             this.game = game;
 
-            for (int i = 0; i < boardArray.Length; i++)
+            for (int i = 0; i < 6; i++)
             {
-                for (int j = 0; j < boardArray.Length; j++)
+                for (int j = 0; j < 6; j++)
                 {
                     SetSingleValue(i, j, FourInARow.emptySpace);
                 }
