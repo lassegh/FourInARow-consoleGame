@@ -15,7 +15,7 @@ namespace FourInARow_consoleGame
         /// <returns>bool</returns>
         public static bool CheckFourInARow(Char[,] boardArray)
         {
-            Boolean gameover = false;
+            bool gameover = false;
             Char checkChar = '_';
             int counter = 0;
 
@@ -50,11 +50,6 @@ namespace FourInARow_consoleGame
                 checkChar = '_';
                 counter = 0;
             }
-<<<<<<< HEAD
-            
-            bool gameover = false;
-             
-=======
 
             // Tjekker vertikalt
             for (int width = 0; width < 6; width++)
@@ -116,10 +111,6 @@ namespace FourInARow_consoleGame
 
             }
 
-
-            // Tjekker diagoanlt /
-
->>>>>>> f35c5e6739259af55694a9680db689fda8dcfe48
             return gameover;
         }
     }
