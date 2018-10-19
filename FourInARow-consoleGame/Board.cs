@@ -121,15 +121,25 @@ namespace FourInARow_consoleGame
 
 
 
-        public override string ToString() // ikke sikker på den fungere, med mindre jeg skriver noget forkert i FourInARow -michael :)
+        public override string ToString()
         {
+
             StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < boardArray.Length; i++)
+
+            for (int r = 0; r < 6;)
             {
-                for (int j = 0; j < boardArray.Length; j++) { sb.Append(FourInARow.emptySpace);}
-                sb.Append("/n");
+                for (int c = 0; c < 6; c++)
+                {
+                    sb.Append(GetSingleValue(c, r));
+                }
+
+                sb.Append("\n");
+                r++;
             }
-            return base.ToString();
+
+
+            return sb.ToString();
+
         }
     
     }
