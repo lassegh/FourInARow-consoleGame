@@ -30,11 +30,11 @@ namespace FourInARow_consoleGame
             while (!GameOver.CheckFourInARow(board.boardArray))
             {
 
-                if (!board.BoardFull()) //nu tjekker vi om boardet er fuldt
+                if (!board.BoardFull()) //tjekker om boardet er fuldt
                 {
                     //spørg currentplayer hvilken brik de vil spille
-                    Console.WriteLine(currentPlayer.getPlayerName() +
-                                      "Hvilken brik + kolonne vil du spille? Du kan vælge mellem 1-6");
+                    Console.WriteLine("\n" + currentPlayer.getPlayerName() +
+                                      " \nHvilken brik + kolonne vil du spille? Du kan vælge mellem 1-6");
 
                     board.AddPiece(currentPlayer.getFormOfPiece(),
                         Convert.ToInt32(Console.ReadLine()) - 1); //Add'er brik til kolonne
@@ -44,15 +44,21 @@ namespace FourInARow_consoleGame
                     Console.WriteLine("Brættet er fuldt. Det blev uafgjort!");
                     break; //afslutter loopet
                 }
-
+                Console.Clear();
                 //print pladen
-                Console.WriteLine(board.boardArray); // Vi vil kun have 'board' i parenteserne, da det er et object og der er toString metode i Lars' board :-)
+                Console.WriteLine(board);
 
                 //næste spillers tur
-                NextPlayer();
-                Console.WriteLine("Nu er det " + currentPlayer.getPlayerName() + "'s tur");
+                if (!GameOver.CheckFourInARow(board.boardArray))
+                {
+                    NextPlayer();
+                }
+                else
+                {
+                    Console.WriteLine(currentPlayer + " har vundet spillet!");
+                    break; //afslutter loopet
+                }
             }
-            // Else skriv hvem der vandt
         }
 
         public void NextPlayer()

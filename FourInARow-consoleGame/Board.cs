@@ -58,7 +58,7 @@ namespace FourInARow_consoleGame
             //bed om en int for kolonnefull
             if (KolonneFull(kolonne))
             {
-                Console.WriteLine("Kolonnen er fuld");
+                Console.WriteLine("Kolonnen er fuld"); // jeg får error message når kolonnen er fuld -michael :)
                 return false; //AddPiece fejlede
             }
             else
@@ -121,7 +121,7 @@ namespace FourInARow_consoleGame
 
 
 
-        public override string ToString()
+        public override string ToString() // ikke sikker på den fungere, med mindre jeg skriver noget forkert i FourInARow -michael :)
         {
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < boardArray.Length; i++)
