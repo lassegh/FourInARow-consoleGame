@@ -29,11 +29,13 @@ namespace FourInARow_consoleGame
             //gameloop
             while (!GameOver.CheckFourInARow(board.boardArray))
             {
+                //printer pladen
+                Console.WriteLine(board);
 
                 if (!board.BoardFull()) //tjekker om boardet er fuldt
                 {
                     //spørg currentplayer hvilken brik de vil spille
-                    Console.WriteLine("\n" + currentPlayer.getPlayerName() +
+                    Console.WriteLine(currentPlayer.getPlayerName() +
                                       " \nHvilken brik + kolonne vil du spille? Du kan vælge mellem 1-6");
 
                     board.AddPiece(currentPlayer.getFormOfPiece(),
@@ -45,8 +47,8 @@ namespace FourInARow_consoleGame
                     break; //afslutter loopet
                 }
                 Console.Clear();
-                //print pladen
-                Console.WriteLine(board);
+
+
 
                 //næste spillers tur
                 if (!GameOver.CheckFourInARow(board.boardArray))
