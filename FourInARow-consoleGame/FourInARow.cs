@@ -55,7 +55,7 @@ namespace FourInARow_consoleGame
                 }
                 else
                 {
-                    Console.WriteLine(currentPlayer + " har vundet spillet!");
+                    Console.WriteLine(currentPlayer.getPlayerName() + " har vundet spillet!");
                     break; //afslutter loopet
                 }
             }
