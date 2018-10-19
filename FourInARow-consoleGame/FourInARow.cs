@@ -13,18 +13,20 @@ namespace FourInARow_consoleGame
         List<Player> players = new List<Player>();
         public Board board;
         public Player currentPlayer;
-       
+        
 
         public static char emptySpace = 'O';
 
         public FourInARow()
         {
             board = new Board(this);
-
-            
-            players.Add(new Player("Lars", 'X'));
-            players.Add(new Player("Martin", 'B'));
+            Console.WriteLine("Spiller 1 navn?");
+            players.Add(new Player(Console.ReadLine(), 'X'));
+            Console.WriteLine("Spiller 2 navn?");
+            players.Add(new Player(Console.ReadLine(), 'B'));
             currentPlayer = players.First();
+            Console.Clear();
+            
 
             //gameloop
             while (!GameOver.CheckFourInARow(board.boardArray))
