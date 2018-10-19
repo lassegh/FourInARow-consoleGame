@@ -103,7 +103,7 @@ namespace FourInARow_consoleGame
 
         public int KolonnePlacement(int kolonne)
         {
-            for (int i = 5; i > 0;)
+            for (int i = 5; i >= 0;)
             {
                 if (boardArray[kolonne, i] == FourInARow.emptySpace)
                 {
