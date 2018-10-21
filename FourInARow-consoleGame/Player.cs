@@ -9,7 +9,7 @@ namespace FourInARow_consoleGame
     public class Player
     {
         private string playerName;
-        private char formOfPiece;
+        public char formOfPiece;
 
         public Player(string name, char piece)
         {
