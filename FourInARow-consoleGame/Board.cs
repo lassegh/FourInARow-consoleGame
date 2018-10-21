@@ -126,17 +126,20 @@ namespace FourInARow_consoleGame
 
             StringBuilder sb = new StringBuilder();
 
+            sb.AppendLine("======================================================");
+            sb.AppendLine("|   1        2        3        4        5        6   |");
+            sb.AppendLine("======================================================");
+
             for (int r = 0; r < 6;)
             {
                 for (int c = 0; c < 6; c++)
                 {
-                    sb.Append(GetSingleValue(c, r));
+                    sb.Append("|   " + GetSingleValue(c, r) + "   |");
                 }
-
                 sb.Append("\n");
                 r++;
             }
-
+            sb.AppendLine("=======================================================");
 
             return sb.ToString();
 
