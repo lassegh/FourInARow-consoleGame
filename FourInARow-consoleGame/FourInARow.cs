@@ -38,7 +38,7 @@ namespace FourInARow_consoleGame
                 {
                     //spørg currentplayer hvilken brik de vil spille
                     Console.WriteLine(currentPlayer.getPlayerName() +
-                                      " \nHvilken brik + kolonne vil du spille? Du kan vælge mellem 1-6");
+                                      ", du spiller {" + currentPlayer.formOfPiece + "} placer venligst din brik i kolonne 1-6.");
 
                     board.AddPiece(currentPlayer.getFormOfPiece(),
                         Convert.ToInt32(Console.ReadLine()) - 1); //Add'er brik til kolonne
